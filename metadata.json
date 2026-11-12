@@ -1,0 +1,6 @@
+{
+  "name": "TikTok Downloader Pro",
+  "description": "Fast and modern web app to analyze and download publicly authorized TikTok videos with creator respect and permissions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
