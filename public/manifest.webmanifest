@@ -1,0 +1,48 @@
+{
+  "id": "/",
+  "name": "TikTok Downloader Pro",
+  "short_name": "TT Pro",
+  "description": "Fast and modern web app to analyze and download authorized TikTok videos with creator respect.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0b0f19",
+  "background_color": "#0b0f19",
+  "categories": ["utilities", "multimedia", "entertainment"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Download Video",
+      "short_name": "Download",
+      "description": "Quickly paste and analyze a TikTok link",
+      "url": "/#input",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

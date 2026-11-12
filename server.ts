@@ -47,10 +47,15 @@ interface VideoData {
   restrictionReason?: string | null;
   formats: FormatOption[];
   publishDate?: string;
+  previewStreamUrl?: string;
 }
 
+const TIKTOK_USER_AGENT =
+  'com.zhiliaoapp.musically/300904 (2018111632; U; Android 10; en_US; Pixel 4; Build/QQ3A.200805.001; Cronet/58.0.2991.0)';
+const DESKTOP_USER_AGENT =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
+
 // Built-in verified sample videos (creative commons / public test media)
-// Users can click any sample to test immediately!
 const SAMPLE_VIDEOS: VideoData[] = [
   {
     id: '7412948201948192031',
@@ -62,7 +67,7 @@ const SAMPLE_VIDEOS: VideoData[] = [
       username: 'natureexplorers',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
       profileUrl: 'https://www.tiktok.com/@natureexplorers',
-      verified: true
+      verified: true,
     },
     thumbnail: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80',
     duration: 18,
@@ -70,44 +75,45 @@ const SAMPLE_VIDEOS: VideoData[] = [
       likes: 248900,
       comments: 3120,
       shares: 14500,
-      views: 1240000
+      views: 1240000,
     },
     music: {
       title: 'Peaceful Ambient Sounds - Hokkaido Morning',
       author: 'Acoustic Journeys',
-      duration: 18
+      duration: 18,
     },
     downloadPermitted: true,
     publishDate: '2026-10-14',
+    previewStreamUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
     formats: [
       {
         type: 'video',
         quality: 'Original High Definition (1080p)',
         format: 'mp4',
         sizeApprox: '14.2 MB',
-        url: '/api/download?type=video&id=sample_waterfall&filename=Hokkaido_Waterfall_NatureExplorers.mp4',
+        url: '/api/download?type=video&id=7412948201948192031&filename=Hokkaido_Waterfall_NatureExplorers.mp4',
         directUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-        filename: 'Hokkaido_Waterfall_NatureExplorers.mp4'
+        filename: 'Hokkaido_Waterfall_NatureExplorers.mp4',
       },
       {
         type: 'audio',
         quality: 'Original Soundtrack Audio (HQ)',
         format: 'mp3',
         sizeApprox: '1.4 MB',
-        url: '/api/download?type=audio&id=sample_waterfall&filename=Hokkaido_Waterfall_Audio.mp3',
+        url: '/api/download?type=audio&id=7412948201948192031&filename=Hokkaido_Waterfall_Audio.mp3',
         directUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-        filename: 'Hokkaido_Waterfall_Audio.mp3'
+        filename: 'Hokkaido_Waterfall_Audio.mp3',
       },
       {
         type: 'cover',
         quality: 'HD Poster Cover (Original)',
         format: 'jpg',
         sizeApprox: '380 KB',
-        url: '/api/download?type=cover&id=sample_waterfall&filename=Hokkaido_Waterfall_Cover.jpg',
+        url: '/api/download?type=cover&id=7412948201948192031&filename=Hokkaido_Waterfall_Cover.jpg',
         directUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=90',
-        filename: 'Hokkaido_Waterfall_Cover.jpg'
-      }
-    ]
+        filename: 'Hokkaido_Waterfall_Cover.jpg',
+      },
+    ],
   },
   {
     id: '7398129038472918234',
@@ -119,7 +125,7 @@ const SAMPLE_VIDEOS: VideoData[] = [
       username: 'chefmarcus',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
       profileUrl: 'https://www.tiktok.com/@chefmarcus',
-      verified: true
+      verified: true,
     },
     thumbnail: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=800&auto=format&fit=crop&q=80',
     duration: 32,
@@ -127,44 +133,45 @@ const SAMPLE_VIDEOS: VideoData[] = [
       likes: 582100,
       comments: 6420,
       shares: 48900,
-      views: 3890000
+      views: 3890000,
     },
     music: {
       title: 'Lofi Coffee Shop Vibes - Marcus Kitchen',
       author: 'ChillBeat Beats',
-      duration: 32
+      duration: 32,
     },
     downloadPermitted: true,
     publishDate: '2026-09-28',
+    previewStreamUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4',
     formats: [
       {
         type: 'video',
         quality: 'Original High Definition (1080p)',
         format: 'mp4',
         sizeApprox: '22.8 MB',
-        url: '/api/download?type=video&id=sample_cheesecake&filename=Matcha_Cheesecake_ChefMarcus.mp4',
+        url: '/api/download?type=video&id=7398129038472918234&filename=Matcha_Cheesecake_ChefMarcus.mp4',
         directUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4',
-        filename: 'Matcha_Cheesecake_ChefMarcus.mp4'
+        filename: 'Matcha_Cheesecake_ChefMarcus.mp4',
       },
       {
         type: 'audio',
         quality: 'Original Soundtrack Audio (HQ)',
         format: 'mp3',
         sizeApprox: '2.1 MB',
-        url: '/api/download?type=audio&id=sample_cheesecake&filename=Matcha_Cheesecake_Audio.mp3',
+        url: '/api/download?type=audio&id=7398129038472918234&filename=Matcha_Cheesecake_Audio.mp3',
         directUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-        filename: 'Matcha_Cheesecake_Audio.mp3'
+        filename: 'Matcha_Cheesecake_Audio.mp3',
       },
       {
         type: 'cover',
         quality: 'HD Poster Cover (Original)',
         format: 'jpg',
         sizeApprox: '410 KB',
-        url: '/api/download?type=cover&id=sample_cheesecake&filename=Matcha_Cheesecake_Cover.jpg',
+        url: '/api/download?type=cover&id=7398129038472918234&filename=Matcha_Cheesecake_Cover.jpg',
         directUrl: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=1200&auto=format&fit=crop&q=90',
-        filename: 'Matcha_Cheesecake_Cover.jpg'
-      }
-    ]
+        filename: 'Matcha_Cheesecake_Cover.jpg',
+      },
+    ],
   },
   {
     id: '7423981290384729111',
@@ -176,7 +183,7 @@ const SAMPLE_VIDEOS: VideoData[] = [
       username: 'alexa_tech',
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80',
       profileUrl: 'https://www.tiktok.com/@alexa_tech',
-      verified: false
+      verified: false,
     },
     thumbnail: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=80',
     duration: 25,
@@ -184,44 +191,45 @@ const SAMPLE_VIDEOS: VideoData[] = [
       likes: 91400,
       comments: 1150,
       shares: 12200,
-      views: 740000
+      views: 740000,
     },
     music: {
       title: 'Synthwave Glitch Tech Beat',
       author: 'Cyber Pulse Audio',
-      duration: 25
+      duration: 25,
     },
     downloadPermitted: true,
     publishDate: '2026-11-02',
+    previewStreamUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
     formats: [
       {
         type: 'video',
         quality: 'Original High Definition (1080p)',
         format: 'mp4',
         sizeApprox: '18.1 MB',
-        url: '/api/download?type=video&id=sample_tech&filename=Tech_Tips_AlexaChen.mp4',
+        url: '/api/download?type=video&id=7423981290384729111&filename=Tech_Tips_AlexaChen.mp4',
         directUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
-        filename: 'Tech_Tips_AlexaChen.mp4'
+        filename: 'Tech_Tips_AlexaChen.mp4',
       },
       {
         type: 'audio',
         quality: 'Original Soundtrack Audio (HQ)',
         format: 'mp3',
         sizeApprox: '1.6 MB',
-        url: '/api/download?type=audio&id=sample_tech&filename=Tech_Tips_Audio.mp3',
+        url: '/api/download?type=audio&id=7423981290384729111&filename=Tech_Tips_Audio.mp3',
         directUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-        filename: 'Tech_Tips_Audio.mp3'
+        filename: 'Tech_Tips_Audio.mp3',
       },
       {
         type: 'cover',
         quality: 'HD Poster Cover (Original)',
         format: 'jpg',
         sizeApprox: '290 KB',
-        url: '/api/download?type=cover&id=sample_tech&filename=Tech_Tips_Cover.jpg',
+        url: '/api/download?type=cover&id=7423981290384729111&filename=Tech_Tips_Cover.jpg',
         directUrl: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&auto=format&fit=crop&q=90',
-        filename: 'Tech_Tips_Cover.jpg'
-      }
-    ]
+        filename: 'Tech_Tips_Cover.jpg',
+      },
+    ],
   },
   {
     id: '7381290384729182390',
@@ -233,7 +241,7 @@ const SAMPLE_VIDEOS: VideoData[] = [
       username: 'soundstudio',
       avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80',
       profileUrl: 'https://www.tiktok.com/@soundstudio',
-      verified: true
+      verified: true,
     },
     thumbnail: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&auto=format&fit=crop&q=80',
     duration: 45,
@@ -241,24 +249,41 @@ const SAMPLE_VIDEOS: VideoData[] = [
       likes: 312000,
       comments: 4890,
       shares: 31000,
-      views: 2900000
+      views: 2900000,
     },
     music: {
       title: 'Cinematic Sound Design Elements',
       author: 'Cinema Sound Lab',
-      duration: 45
+      duration: 45,
     },
     downloadPermitted: false,
-    restrictionReason: 'The creator and licensing studio have disabled video downloads for this post. We respect creator rights and copyright protections.',
+    restrictionReason:
+      'The creator and licensing studio have disabled video downloads for this post. We respect creator rights and copyright protections.',
     publishDate: '2026-08-19',
-    formats: []
-  }
+    formats: [],
+  },
 ];
 
-// Helper: check if a URL looks like a TikTok link
+// In-memory cache for resolved media URLs
+const MEDIA_CACHE = new Map<
+  string,
+  {
+    videoUrl: string;
+    audioUrl: string;
+    coverUrl: string;
+    filename: string;
+    timestamp: number;
+  }
+>();
+
+// Helper: check if a URL belongs to TikTok ecosystem
 function isTikTokUrl(inputUrl: string): boolean {
   try {
-    const parsed = new URL(inputUrl.trim());
+    let clean = inputUrl.trim();
+    if (!clean.startsWith('http://') && !clean.startsWith('https://')) {
+      clean = 'https://' + clean;
+    }
+    const parsed = new URL(clean);
     const hostname = parsed.hostname.toLowerCase();
     return (
       hostname.includes('tiktok.com') ||
@@ -270,21 +295,121 @@ function isTikTokUrl(inputUrl: string): boolean {
   }
 }
 
-// Helper: Follow redirects to get canonical URL
-async function resolveUrl(inputUrl: string): Promise<string> {
+// Helper: Resolve shortened URLs (vm.tiktok.com, vt.tiktok.com, tiktok.com/t/...)
+async function resolveTikTokCanonicalUrl(
+  inputUrl: string
+): Promise<{ canonicalUrl: string; videoId: string | null }> {
+  let currentUrl = inputUrl.trim();
+  if (!currentUrl.startsWith('http://') && !currentUrl.startsWith('https://')) {
+    currentUrl = 'https://' + currentUrl;
+  }
+
+  // Check if videoId is already directly in the input URL
+  let match =
+    currentUrl.match(/\/video\/(\d+)/) ||
+    currentUrl.match(/item_id=(\d+)/) ||
+    currentUrl.match(/\/v\/(\d+)/) ||
+    currentUrl.match(/(\d{17,21})/);
+
+  if (match && currentUrl.includes('/video/')) {
+    return { canonicalUrl: currentUrl, videoId: match[1] };
+  }
+
+  // Follow redirects using fetch
   try {
-    const res = await fetch(inputUrl, {
-      method: 'HEAD',
+    const res = await fetch(currentUrl, {
+      method: 'GET',
       redirect: 'follow',
       headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'User-Agent': DESKTOP_USER_AGENT,
       },
     });
-    return res.url || inputUrl;
-  } catch {
-    return inputUrl;
+
+    const finalUrl = res.url || currentUrl;
+    match =
+      finalUrl.match(/\/video\/(\d+)/) ||
+      finalUrl.match(/item_id=(\d+)/) ||
+      finalUrl.match(/\/v\/(\d+)/) ||
+      finalUrl.match(/(\d{17,21})/);
+
+    return {
+      canonicalUrl: finalUrl,
+      videoId: match ? match[1] : null,
+    };
+  } catch (e) {
+    console.warn('Redirect resolution warning:', e);
+    return { canonicalUrl: currentUrl, videoId: match ? match[1] : null };
   }
+}
+
+// Helper: Query TikTok Aweme Feed API to extract the real video stream & metadata
+async function fetchTikTokAwemeData(videoId: string) {
+  const randomDeviceId = '7' + Math.floor(Math.random() * 89999999999999999 + 10000000000000000);
+  const randomIid = '7' + Math.floor(Math.random() * 89999999999999999 + 10000000000000000);
+
+  const params = new URLSearchParams({
+    aweme_id: videoId,
+    version_name: '1.1.9',
+    version_code: '2018111632',
+    build_number: '1.1.9',
+    device_id: randomDeviceId,
+    iid: randomIid,
+    manifest_version_code: '2018111632',
+    update_version_code: '2018111632',
+    openudid: '0123456789abcdef',
+    uuid: '1234567890123456',
+    _rticket: String(Date.now() * 1000),
+    ts: String(Math.floor(Date.now() / 1000)),
+    device_brand: 'Google',
+    device_type: 'Pixel 4',
+    device_platform: 'android',
+    resolution: '1080*1920',
+    dpi: '420',
+    os_version: '10',
+    os_api: '29',
+    carrier_region: 'US',
+    sys_region: 'US',
+    region: 'US',
+    timezone_name: 'America/New_York',
+    timezone_offset: '-14400',
+    channel: 'googleplay',
+    ac: 'wifi',
+    mcc_mnc: '310260',
+    is_my_cn: '0',
+    ssmix: 'a',
+    as: 'a1qwert123',
+    cp: 'cbfhckdckkde1',
+  });
+
+  const endpoints = [
+    `https://api16-normal-useast5.tiktokv.us/aweme/v1/feed/?${params.toString()}`,
+    `https://api16-normal-c-useast1a.tiktokv.com/aweme/v1/feed/?${params.toString()}`,
+    `https://api16-va.tiktokv.com/aweme/v1/feed/?${params.toString()}`,
+  ];
+
+  for (const ep of endpoints) {
+    try {
+      const res = await fetch(ep, {
+        method: 'OPTIONS',
+        headers: {
+          'User-Agent': TIKTOK_USER_AGENT,
+        },
+      });
+
+      if (!res.ok) continue;
+      const json = await res.json();
+      if (json && json.status_code === 0 && json.aweme_list && json.aweme_list.length > 0) {
+        const found =
+          json.aweme_list.find((item: any) => String(item.aweme_id) === String(videoId)) ||
+          json.aweme_list[0];
+        if (found) return found;
+      }
+    } catch (err) {
+      console.warn(`Aweme endpoint ${ep} failed:`, err);
+    }
+  }
+
+  return null;
 }
 
 async function startServer() {
@@ -292,6 +417,20 @@ async function startServer() {
   const PORT = Number(process.env.PORT) || 3000;
 
   app.use(express.json());
+
+  // Serve static public assets (Manifest, Service Worker, PWA Icons) with correct MIME types
+  app.use(
+    express.static(path.resolve(__dirname, 'public'), {
+      setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.webmanifest')) {
+          res.setHeader('Content-Type', 'application/manifest+json');
+        } else if (filePath.endsWith('sw.js')) {
+          res.setHeader('Content-Type', 'application/javascript');
+          res.setHeader('Service-Worker-Allowed', '/');
+        }
+      },
+    })
+  );
 
   // API Route: List sample videos
   app.get('/api/samples', (_req: Request, res: Response) => {
@@ -301,7 +440,7 @@ async function startServer() {
     });
   });
 
-  // API Route: Analyze TikTok video
+  // API Route: Analyze TikTok video and extract real media stream
   app.post('/api/analyze', async (req: Request, res: Response) => {
     try {
       const { url } = req.body;
@@ -315,7 +454,7 @@ async function startServer() {
 
       const trimmedUrl = url.trim();
 
-      // Check if URL belongs to TikTok or sample
+      // Check if URL matches a sample video
       const matchedSample = SAMPLE_VIDEOS.find(
         (s) =>
           s.originalUrl.toLowerCase() === trimmedUrl.toLowerCase() ||
@@ -324,7 +463,6 @@ async function startServer() {
       );
 
       if (matchedSample) {
-        // Return sample directly
         res.json({
           success: true,
           data: matchedSample,
@@ -341,27 +479,22 @@ async function startServer() {
         return;
       }
 
-      // Resolve shortened URLs
-      const canonicalUrl = await resolveUrl(trimmedUrl);
+      // Step 1: Follow redirects and resolve video ID
+      const { canonicalUrl, videoId } = await resolveTikTokCanonicalUrl(trimmedUrl);
 
-      // Check TikTok oEmbed API
+      // Step 2: Query official TikTok oEmbed for display metadata
       const oembedUrl = `https://www.tiktok.com/oembed?url=${encodeURIComponent(canonicalUrl)}`;
       let oembedData: {
         title?: string;
         author_name?: string;
         author_url?: string;
         thumbnail_url?: string;
-        html?: string;
       } | null = null;
 
       try {
         const oembedRes = await fetch(oembedUrl, {
-          headers: {
-            'User-Agent':
-              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-          },
+          headers: { 'User-Agent': DESKTOP_USER_AGENT },
         });
-
         if (oembedRes.ok) {
           oembedData = await oembedRes.json();
         }
@@ -369,90 +502,154 @@ async function startServer() {
         console.warn('oEmbed fetch error:', err);
       }
 
-      // Extract username and video ID from canonical URL
-      const match = canonicalUrl.match(/@([^/]+)\/video\/(\d+)/);
-      const username = match ? match[1] : (oembedData?.author_name ? oembedData.author_name.replace(/\s+/g, '').toLowerCase() : 'tiktok_creator');
-      const videoId = match ? match[2] : String(Date.now());
+      // Step 3: Fetch the real video stream via Aweme Feed API
+      let awemeItem: any = null;
+      if (videoId) {
+        awemeItem = await fetchTikTokAwemeData(videoId);
+      }
 
-      if (!oembedData && !match) {
+      if (!awemeItem && !oembedData) {
         res.status(404).json({
           success: false,
           error:
-            'Could not find or inspect this TikTok video. It might be private, deleted, age-restricted, or region-locked.',
+            'Could not find or inspect this TikTok video. It might be private, deleted, or region-locked.',
           code: 'VIDEO_NOT_FOUND',
         });
         return;
       }
 
-      const title = oembedData?.title || 'TikTok Video by @' + username;
-      const authorName = oembedData?.author_name || username;
-      const profileUrl = oembedData?.author_url || `https://www.tiktok.com/@${username}`;
-      const thumbnail =
+      // Extract real video stream URL from Aweme
+      const rawPlayUrls: string[] = awemeItem?.video?.play_addr?.url_list || [];
+      const rawDownloadUrls: string[] = awemeItem?.video?.download_addr?.url_list || [];
+      const realVideoUrl = rawPlayUrls[0] || rawDownloadUrls[0] || '';
+
+      // Extract real audio soundtrack URL
+      const rawAudioUrls: string[] = awemeItem?.music?.play_url?.url_list || [];
+      const realAudioUrl = rawAudioUrls[0] || realVideoUrl;
+
+      // Extract real HD cover image
+      const rawCoverUrl =
+        awemeItem?.video?.origin_cover?.url_list?.[0] ||
+        awemeItem?.video?.cover?.url_list?.[0] ||
         oembedData?.thumbnail_url ||
-        'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80';
+        '';
 
-      // For standard live public TikToks:
-      // When permitted by the creator, official public download streams or embeds are available.
-      // We check if downloading is permitted
-      const downloadPermitted = true;
+      // Check author info
+      const authorUniqueId =
+        awemeItem?.author?.unique_id ||
+        (canonicalUrl.match(/@([^/]+)/) ? canonicalUrl.match(/@([^/]+)/)![1] : 'creator');
+      const authorNickname =
+        awemeItem?.author?.nickname || oembedData?.author_name || authorUniqueId;
+      const rawAvatarUrl =
+        awemeItem?.author?.avatar_medium?.url_list?.[0] ||
+        awemeItem?.author?.avatar_thumb?.url_list?.[0] ||
+        `https://api.dicebear.com/7.x/identicon/svg?seed=${authorUniqueId}`;
 
-      const safeFilename = `${username}_${videoId}`.replace(/[^a-zA-Z0-9_-]/g, '_');
+      const title =
+        awemeItem?.desc || oembedData?.title || `TikTok Video by @${authorUniqueId}`;
+      const durationSeconds = awemeItem?.video?.duration
+        ? Math.round(awemeItem.video.duration / 1000)
+        : 15;
+
+      const safeFilename = `${authorUniqueId}_${videoId || Date.now()}`.replace(
+        /[^a-zA-Z0-9_-]/g,
+        '_'
+      );
+
+      // Check creator permissions: if download is restricted
+      const isRestricted = awemeItem?.item_comment_settings === 3 || awemeItem?.is_restricted;
+      const downloadPermitted = !isRestricted && Boolean(realVideoUrl);
+
+      // Store in media cache for rapid retrieval
+      if (videoId && realVideoUrl) {
+        MEDIA_CACHE.set(videoId, {
+          videoUrl: realVideoUrl,
+          audioUrl: realAudioUrl,
+          coverUrl: rawCoverUrl,
+          filename: safeFilename,
+          timestamp: Date.now(),
+        });
+      }
+
+      // Build safe proxy URLs so browser plays and downloads the exact media without CORS blocks
+      const proxyThumbnail = rawCoverUrl
+        ? `/api/proxy-image?url=${encodeURIComponent(rawCoverUrl)}`
+        : '';
+      const proxyAvatar = rawAvatarUrl.startsWith('http')
+        ? `/api/proxy-image?url=${encodeURIComponent(rawAvatarUrl)}`
+        : rawAvatarUrl;
+
+      const previewStreamUrl = realVideoUrl
+        ? `/api/stream?id=${videoId || ''}&url=${encodeURIComponent(realVideoUrl)}`
+        : '';
 
       const videoData: VideoData = {
-        id: videoId,
+        id: videoId || String(Date.now()),
         originalUrl: trimmedUrl,
         canonicalUrl,
         title,
         author: {
-          name: authorName,
-          username,
-          avatar: `https://api.dicebear.com/7.x/identicon/svg?seed=${username}`,
-          profileUrl,
-          verified: false,
+          name: authorNickname,
+          username: authorUniqueId,
+          avatar: proxyAvatar,
+          profileUrl: oembedData?.author_url || `https://www.tiktok.com/@${authorUniqueId}`,
+          verified: Boolean(awemeItem?.author?.verification_type || awemeItem?.author?.is_verified),
         },
-        thumbnail,
-        duration: 15,
+        thumbnail: proxyThumbnail,
+        duration: durationSeconds,
         stats: {
-          likes: Math.floor(Math.random() * 50000) + 1200,
-          comments: Math.floor(Math.random() * 800) + 50,
-          shares: Math.floor(Math.random() * 1200) + 80,
-          views: Math.floor(Math.random() * 200000) + 15000,
+          likes: awemeItem?.statistics?.digg_count || 1200,
+          comments: awemeItem?.statistics?.comment_count || 48,
+          shares: awemeItem?.statistics?.share_count || 85,
+          views: awemeItem?.statistics?.play_count || 14500,
         },
         music: {
-          title: `Original Sound - ${authorName}`,
-          author: authorName,
-          duration: 15,
+          title: awemeItem?.music?.title || `Original Sound - ${authorNickname}`,
+          author: awemeItem?.music?.author || authorNickname,
+          duration: awemeItem?.music?.duration || durationSeconds,
         },
         downloadPermitted,
-        formats: [
-          {
-            type: 'video',
-            quality: 'Standard MP4 Video (Official)',
-            format: 'mp4',
-            sizeApprox: '12.4 MB',
-            url: `/api/download?type=video&id=${videoId}&title=${encodeURIComponent(safeFilename)}`,
-            directUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-            filename: `${safeFilename}.mp4`,
-          },
-          {
-            type: 'audio',
-            quality: 'Audio Soundtrack (MP3)',
-            format: 'mp3',
-            sizeApprox: '1.1 MB',
-            url: `/api/download?type=audio&id=${videoId}&title=${encodeURIComponent(safeFilename)}`,
-            directUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-            filename: `${safeFilename}_audio.mp3`,
-          },
-          {
-            type: 'cover',
-            quality: 'Cover Image (HD JPG)',
-            format: 'jpg',
-            sizeApprox: '320 KB',
-            url: `/api/download?type=cover&id=${videoId}&title=${encodeURIComponent(safeFilename)}&coverUrl=${encodeURIComponent(thumbnail)}`,
-            directUrl: thumbnail,
-            filename: `${safeFilename}_cover.jpg`,
-          },
-        ],
+        restrictionReason: downloadPermitted
+          ? null
+          : 'The creator has restricted downloads on this video. To respect copyright and creator preferences, downloading is disabled.',
+        previewStreamUrl,
+        formats: downloadPermitted
+          ? [
+              {
+                type: 'video',
+                quality: 'Original TikTok Video (HD MP4)',
+                format: 'mp4',
+                sizeApprox: '15–30 MB',
+                url: `/api/download?type=video&id=${videoId || ''}&realUrl=${encodeURIComponent(
+                  realVideoUrl
+                )}&filename=${encodeURIComponent(safeFilename)}.mp4`,
+                directUrl: previewStreamUrl,
+                filename: `${safeFilename}.mp4`,
+              },
+              {
+                type: 'audio',
+                quality: 'Original Soundtrack Audio (MP3)',
+                format: 'mp3',
+                sizeApprox: '1–3 MB',
+                url: `/api/download?type=audio&id=${videoId || ''}&realUrl=${encodeURIComponent(
+                  realAudioUrl
+                )}&filename=${encodeURIComponent(safeFilename)}_audio.mp3`,
+                directUrl: realAudioUrl,
+                filename: `${safeFilename}_audio.mp3`,
+              },
+              {
+                type: 'cover',
+                quality: 'HD Poster Cover (Original)',
+                format: 'jpg',
+                sizeApprox: '350 KB',
+                url: `/api/download?type=cover&id=${videoId || ''}&realUrl=${encodeURIComponent(
+                  rawCoverUrl
+                )}&filename=${encodeURIComponent(safeFilename)}_cover.jpg`,
+                directUrl: proxyThumbnail,
+                filename: `${safeFilename}_cover.jpg`,
+              },
+            ]
+          : [],
       };
 
       res.json({
@@ -463,30 +660,121 @@ async function startServer() {
       console.error('Error analyzing TikTok video:', err);
       res.status(500).json({
         success: false,
-        error: 'Unable to process this TikTok link. Please make sure the video is public and accessible.',
+        error:
+          'Unable to analyze this TikTok link. Please make sure the video is public and accessible.',
         details: err?.message,
       });
     }
   });
 
+  // API Route: Video Streaming Proxy (Supports HTTP Range for inline player & seeking)
+  app.get('/api/stream', async (req: Request, res: Response) => {
+    try {
+      let targetUrl = (req.query.url as string) || '';
+      if (!targetUrl && req.originalUrl.includes('?url=')) {
+        targetUrl = decodeURIComponent(req.originalUrl.split('?url=')[1].split('&')[0]);
+      }
+      const videoId = req.query.id as string;
+
+      let finalStreamUrl = targetUrl;
+      if (!finalStreamUrl && videoId && MEDIA_CACHE.has(videoId)) {
+        finalStreamUrl = MEDIA_CACHE.get(videoId)!.videoUrl;
+      }
+
+      if (!finalStreamUrl) {
+        res.status(400).send('Missing video URL');
+        return;
+      }
+
+      const headers: Record<string, string> = {
+        'User-Agent': TIKTOK_USER_AGENT,
+        Referer: 'https://www.tiktok.com/',
+      };
+
+      // Forward client Range header if requested
+      if (req.headers.range) {
+        headers['Range'] = req.headers.range;
+      }
+
+      const remoteRes = await fetch(finalStreamUrl, {
+        method: 'GET',
+        headers,
+      });
+
+      res.status(remoteRes.status);
+      res.setHeader('Content-Type', remoteRes.headers.get('content-type') || 'video/mp4');
+      res.setHeader('Accept-Ranges', 'bytes');
+
+      const contentRange = remoteRes.headers.get('content-range');
+      if (contentRange) res.setHeader('Content-Range', contentRange);
+
+      const contentLength = remoteRes.headers.get('content-length');
+      if (contentLength) res.setHeader('Content-Length', contentLength);
+
+      const arrayBuffer = await remoteRes.arrayBuffer();
+      res.send(Buffer.from(arrayBuffer));
+    } catch (err: any) {
+      console.error('Stream proxy error:', err);
+      res.status(502).send('Failed to stream video');
+    }
+  });
+
+  // API Route: Image Proxy for TikTok CDN (avoids cross-origin referrer blocks)
+  app.get('/api/proxy-image', async (req: Request, res: Response) => {
+    try {
+      let imgUrl = (req.query.url as string) || '';
+      if (req.originalUrl.includes('?url=')) {
+        imgUrl = decodeURIComponent(req.originalUrl.split('?url=')[1]);
+      }
+      if (!imgUrl) {
+        res.status(400).send('Missing image URL');
+        return;
+      }
+
+      const remoteRes = await fetch(imgUrl, {
+        headers: {
+          'User-Agent': DESKTOP_USER_AGENT,
+          Referer: 'https://www.tiktok.com/',
+        },
+      });
+
+      if (!remoteRes.ok) {
+        res.status(remoteRes.status).send('Image fetch failed');
+        return;
+      }
+
+      res.setHeader(
+        'Content-Type',
+        remoteRes.headers.get('content-type') || 'image/jpeg'
+      );
+      res.setHeader('Cache-Control', 'public, max-age=86400');
+
+      const arrayBuffer = await remoteRes.arrayBuffer();
+      res.send(Buffer.from(arrayBuffer));
+    } catch (err: any) {
+      console.error('Image proxy error:', err);
+      res.status(502).send('Failed to proxy image');
+    }
+  });
+
   // API Route: Secure Download Stream Proxy
-  // Pipes the stream with proper Content-Disposition: attachment header
+  // Fetches the exact real TikTok video and streams with Content-Disposition: attachment
   app.get('/api/download', async (req: Request, res: Response) => {
     try {
       const type = (req.query.type as string) || 'video';
       const id = req.query.id as string;
+      let realUrl = (req.query.realUrl as string) || '';
+      if (!realUrl && req.originalUrl.includes('&realUrl=')) {
+        realUrl = decodeURIComponent(req.originalUrl.split('&realUrl=')[1].split('&filename=')[0]);
+      }
       const customFilename = req.query.filename as string;
-      const title = (req.query.title as string) || `tiktok_${id || 'download'}`;
-      const coverUrl = req.query.coverUrl as string;
 
-      // Check if sample media
-      const sample = SAMPLE_VIDEOS.find(
-        (s) => s.id === id || s.formats.some((f) => f.url.includes(id))
-      );
-
+      // 1. Check if it's one of our built-in sample videos
+      const sample = SAMPLE_VIDEOS.find((s) => s.id === id);
       let targetUrl = '';
-      let defaultFilename = `${title}.${type === 'audio' ? 'mp3' : type === 'cover' ? 'jpg' : 'mp4'}`;
-      let contentType = type === 'audio' ? 'audio/mpeg' : type === 'cover' ? 'image/jpeg' : 'video/mp4';
+      let defaultFilename = `tiktok_${id || Date.now()}.${type === 'audio' ? 'mp3' : type === 'cover' ? 'jpg' : 'mp4'}`;
+      let contentType =
+        type === 'audio' ? 'audio/mpeg' : type === 'cover' ? 'image/jpeg' : 'video/mp4';
 
       if (sample) {
         const fmt = sample.formats.find((f) => f.type === type);
@@ -494,47 +782,58 @@ async function startServer() {
           targetUrl = fmt.directUrl;
           defaultFilename = fmt.filename;
         }
-      } else if (type === 'cover' && coverUrl) {
-        targetUrl = coverUrl;
-      } else {
-        // Fallback demo media stream
-        if (type === 'audio') {
-          targetUrl = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
-        } else if (type === 'cover') {
-          targetUrl = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80';
-        } else {
-          targetUrl = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4';
-        }
+      } else if (realUrl) {
+        targetUrl = realUrl;
+      } else if (id && MEDIA_CACHE.has(id)) {
+        const cached = MEDIA_CACHE.get(id)!;
+        targetUrl =
+          type === 'audio'
+            ? cached.audioUrl
+            : type === 'cover'
+            ? cached.coverUrl
+            : cached.videoUrl;
+        defaultFilename = `${cached.filename}.${type === 'audio' ? 'mp3' : type === 'cover' ? 'jpg' : 'mp4'}`;
+      }
+
+      if (!targetUrl) {
+        res.status(404).json({
+          success: false,
+          error: 'Media download link not found or expired.',
+        });
+        return;
       }
 
       const filename = customFilename || defaultFilename;
 
-      // Fetch remote media stream and pipe to client with attachment header
+      // Fetch the real media stream from TikTok CDN with appropriate headers
       const mediaResponse = await fetch(targetUrl, {
         headers: {
-          'User-Agent':
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+          'User-Agent': TIKTOK_USER_AGENT,
+          Referer: 'https://www.tiktok.com/',
           Accept: '*/*',
         },
       });
 
       if (!mediaResponse.ok) {
+        console.error('Remote media fetch failed with status:', mediaResponse.status);
         res.status(502).json({
           success: false,
-          error: 'Failed to retrieve media stream from source.',
+          error: 'Failed to retrieve media stream from TikTok CDN.',
         });
         return;
       }
 
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-      res.setHeader('Content-Type', mediaResponse.headers.get('content-type') || contentType);
+      res.setHeader(
+        'Content-Type',
+        mediaResponse.headers.get('content-type') || contentType
+      );
 
       const contentLength = mediaResponse.headers.get('content-length');
       if (contentLength) {
         res.setHeader('Content-Length', contentLength);
       }
 
-      // Convert body to array buffer and send
       const arrayBuffer = await mediaResponse.arrayBuffer();
       res.send(Buffer.from(arrayBuffer));
     } catch (err: any) {

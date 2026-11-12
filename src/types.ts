@@ -39,6 +39,7 @@ export interface VideoData {
   restrictionReason?: string | null;
   formats: FormatOption[];
   publishDate?: string;
+  previewStreamUrl?: string;
 }
 
 export interface DownloadHistoryItem {

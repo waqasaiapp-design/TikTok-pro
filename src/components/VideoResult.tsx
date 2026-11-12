@@ -104,15 +104,18 @@ export const VideoResult: React.FC<VideoResultProps> = ({
             <div className="relative aspect-[9/16] max-h-[480px] w-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center group shadow-xl">
               {activeMediaTab === 'preview' ? (
                 <video
+                  key={video.id}
                   src={
+                    video.previewStreamUrl ||
                     video.formats.find((f) => f.type === 'video')?.directUrl ||
-                    'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
+                    video.formats.find((f) => f.type === 'video')?.url ||
+                    ''
                   }
                   poster={video.thumbnail}
                   controls
                   playsInline
                   preload="metadata"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover bg-black"
                 />
               ) : (
                 <img

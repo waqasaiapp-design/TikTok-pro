@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Clipboard, ArrowRight, Loader2, Sparkles, X, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import { VideoData } from '../types.ts';
+import { PWAInstallButton } from './PWAInstallButton.tsx';
 
 interface HeroInputProps {
   url: string;
@@ -66,7 +67,10 @@ export const HeroInput: React.FC<HeroInputProps> = ({
       />
 
       {/* Main Headings */}
-      <div className="space-y-3 mb-8">
+      <div className="space-y-4 mb-8">
+        <div className="flex items-center justify-center">
+          <PWAInstallButton variant="hero" />
+        </div>
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
           Download <span className="bg-gradient-to-r from-purple-400 via-indigo-300 to-blue-400 bg-clip-text text-transparent">TikTok Videos</span>
         </h1>

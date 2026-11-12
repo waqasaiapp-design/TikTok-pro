@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PageTab, ThemeMode } from '../types.ts';
 import { Sun, Moon, Share2, Menu, X, ShieldCheck } from 'lucide-react';
+import { PWAInstallButton } from './PWAInstallButton.tsx';
 
 interface NavbarProps {
   activeTab: PageTab;
@@ -78,9 +79,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             );
           })}
         </nav>
-
-        {/* Right Zone: Controls (Theme, Share, CTA) */}
+        {/* Right Zone: Controls (Install, Theme, Share, CTA) */}
         <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          <PWAInstallButton variant="navbar" />
           <button
             onClick={onShareApp}
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-300 hover:text-white bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60 transition-colors"
@@ -131,6 +132,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               {item.label}
             </button>
           ))}
+          <div className="pt-2">
+            <PWAInstallButton variant="banner" />
+          </div>
           <div className="pt-2 mt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 px-2">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />

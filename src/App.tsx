@@ -195,6 +195,8 @@ export default function App() {
     const link = document.createElement('a');
     link.href = fmt.url;
     link.setAttribute('download', fmt.filename);
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -207,6 +209,8 @@ export default function App() {
     const link = document.createElement('a');
     link.href = item.downloadUrl;
     link.setAttribute('download', item.filename);
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
